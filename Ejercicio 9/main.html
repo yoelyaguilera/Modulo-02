@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const ovejas = [
+                    { name: 'Noa', color: 'azul' },
+                    { name: 'Euge', color: 'rojo' },
+                    { name: 'Navidad', color: 'rojo' },
+                    { name: 'Ki Na Ma', color: 'rojo'},
+                    { name: 'AAAAAaaaaa', color: 'rojo' },
+                    { name: 'Nnnnnnnn', color: 'rojo'}
+                ]
+
+    contarOvejas(ovejas)
+    function contarOvejas(ovejas) {
+        for (let oveja of ovejas){
+            let ove = oveja.name.toLowerCase();
+            
+            if (ove.indexOf("n") > -1 && ove.indexOf("a") > -1 && oveja.color == "rojo") {
+                console.log("Estas ovejas son rojas y contiene su nombre n y a: " + oveja.name)
+            }else{
+                console.log("Estas ovejas 'NO' son: " + oveja.name)
+            }  
+        }
+    return ovejas
+    }
+</script>
+
+</body>
+</html>

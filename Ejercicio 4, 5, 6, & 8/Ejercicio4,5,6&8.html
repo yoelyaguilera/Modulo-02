@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick= "clearInterval(tiempo)">Detener Gestores</button>
+<script >
+
+    // Modulo 2 - Ejercicio 4
+    var gestor1 = {
+        nombre: 'Gestor Nombre 1',
+        apellido: 'Gestor Apellido 1',
+        cedula: '001'
+    };
+    var gestor2 = {
+        nombre: 'Gestor Nombre 2',
+        apellido: 'Gestor Apellido 2',
+        cedula: '002'
+    };
+    var gestor3 = {
+        nombre: 'Gestor Nombre 3',
+        apellido: 'Gestor Apellido 3',
+        cedula: '003'
+    };
+
+    var cliente1 = {
+        nombre: 'Cliente Nombre 1',
+        apellido: 'Cliente Apellido 1',
+        cedula: '111',
+    };
+    var cliente2 = {
+        nombre: 'Cliente Nombre 2',
+        apellido: 'Cliente Apellido 2',
+        cedula: '112',
+    };
+    var cliente3 = {
+        nombre: 'Cliente Nombre 3',
+        apellido: 'Cliente Apellido 3',
+        cedula: '113',
+    };
+
+    var mensaje1 = {
+        mensaje: 'Mensaje 1',
+        codigo: '221',
+        destino: 'Valencia 1',
+    };
+    var mensaje2 = {
+        mensaje: 'Mensaje 2',
+        codigo: '222',
+        destino: 'Valencia 2',
+    };
+    var mensaje3 = {
+        mensaje: 'Mensaje 3',
+        codigo: '223',
+        destino: 'Valencia 3',
+    };
+
+    var transferecia1 = {
+        descripcion: 'Transferencia1',
+        monto: '331',
+        fecha: '2017-01-02'
+    };
+    var transferencia2 = {
+        descripcion: 'Transferencia2',
+        monto: '332',
+        fecha: '2017-01-02'
+    };
+    var transferencia3 = {
+        descripcion: 'Transferencia3',
+        monto: '333',
+        fecha: '2017-01-02'
+    };
+// Modulo 2 - Ejercicio 5
+    var arrayGestor   = [gestor1,gestor2,gestor3];
+    var arrayCliente  = [cliente1,cliente2,cliente3];
+    var arrayMensaje  = [mensaje1,mensaje2,mensaje3];
+    var arrayTransfer = [transferecia1,transferencia2,transferencia3];
+    console.log("Transformando Objetos a Array");
+    console.log(arrayGestor);
+    console.log(arrayCliente);
+    console.log(arrayMensaje);
+    console.log(arrayTransfer);
+
+// Modulo 2 - Ejercicio 6-1
+    var gestorJSON   = JSON.stringify(arrayGestor);
+    var clienteJSON  = JSON.stringify(arrayCliente);
+    var mensajeJSON  = JSON.stringify(arrayMensaje);
+    var transferJSON = JSON.stringify(arrayTransfer);
+    console.log("Transformando de Array a JSON (String)");
+    console.log(gestorJSON);
+    console.log(typeof(gestorJSON));
+    console.log(clienteJSON);
+    console.log(typeof(clienteJSON));
+    console.log(mensajeJSON);
+    console.log(typeof(mensajeJSON));
+    console.log(transferJSON);
+    console.log(typeof(transferJSON));
+
+// Modulo 2 - Ejercicio 6-2
+    console.log("Transformado de JSON a Array (Objeto)");
+    var gestorARRAY   = JSON.parse(gestorJSON);
+    var clienteARRAY  = JSON.parse(clienteJSON);
+    var mensajeARRAY  = JSON.parse(mensajeJSON);
+    var transferARRAY = JSON.parse(transferJSON);
+    console.log(gestorARRAY);
+    console.log(typeof(gestorARRAY));
+    console.log(clienteARRAY);
+    console.log(typeof(clienteARRAY));
+    console.log(mensajeARRAY);
+    console.log(typeof(mensajeARRAY));
+    console.log(transferARRAY);
+    console.log(typeof(transferARRAY));
+    console.log("Fin");
+
+// Modulo 2 - Ejercicio 8
+    function gestorTiempo() {
+        console.log("Estos son los nuevos Gestores");         
+        console.log(gestorARRAY);
+    }
+    var tiempo = window.setInterval(gestorTiempo, 5000);
+
+</script>
+</body>
+</html>
