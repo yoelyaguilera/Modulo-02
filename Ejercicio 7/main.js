@@ -22,7 +22,7 @@ function getPokemons(pageUrl = "https://pokeapi.co/api/v2/pokemon/") {
                 var strNewWebsiteName = imprimir.replace("/", "");  
                 var strNewWebsiteName2 = strNewWebsiteName.replace("/", "");
 
-                pokemonContainer.innerHTML += "<tr title='" + pokemon.name + "'><td>" + strNewWebsiteName2 + "</td> <td>" + pokemon.name + "</td><td>  <button  onclick =" + 'showPokemon("'+pokemon.url+'") '+ ">mas</button> </td></tr><br />";
+                pokemonContainer.innerHTML += "<tr title='" + pokemon.name + "'><td>" + strNewWebsiteName2 + "</td> <td>" + pokemon.name + "</td><td>  <button class='btn btn-primary' onclick =" + 'showPokemon("'+pokemon.url+'") '+ ">mas</button> </td></tr><br />";
             }
         }
     };
@@ -41,7 +41,7 @@ function showPokemon(url) {
                 const response = JSON.parse(this.responseText);
 
                 console.log( response);
-                pokemonContainer.innerHTML +=" <div class='card' style='width: 18rem;'> <img src='"+ response.sprites.front_default +"' class='card-img-top' alt='...'><div class='card-body'><h5 class='card-title'>"+response.name+"</h5><p class='card-text'>"+response.base_experience+"</p></div></div>";
+                pokemonContainer.innerHTML +=" <div class='card' style='width: 18rem;'> <img src='"+ response.sprites.front_default +"' class='card-img-top' alt='...'><div class='card-body'><h5 class='card-title'>"+response.name+"</h5><p class='card-text'>Experiencia: "+response.base_experience+"</p></div><button class='btn btn-primary' onclick =" + 'location.reload()'+ ">Atras</button></div>";
               
             }
         };

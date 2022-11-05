@@ -11,11 +11,17 @@
 </head>
 <body id="body">
     <script src="main.js"></script>
-    <button onclick="getPrevPage()">&lt; Prev</button>
-    <button onclick="getPokemons()">Get Pokemons</button>
-    <button onclick="getNextPage()">Next &gt;</button>
-    
-<table id="table" class="table">
+    <div class="row">
+      <div class="col col-2"></div>
+      <button  class="btn btn-secondary col col-2" onclick="getPrevPage()">&lt; Prev</button>
+      <div class="col col-1"></div>
+      <button  class="btn btn-secondary col col-2" onclick="getPokemons()">Get Pokemons</button>
+      <div class="col col-1"></div>
+      <button  class="btn btn-secondary col col-2" onclick="getNextPage()">Next &gt;</button>
+      <div class="col col-2"></div>
+
+    </div>
+<table id="table" class="table" style="text-align: center;">
   <thead>
     <tr>
       <th scope="col">#</th>

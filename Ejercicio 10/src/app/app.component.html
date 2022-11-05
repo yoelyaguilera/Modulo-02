@@ -1,0 +1,45 @@
+<h1 style="text-align: center;">{{title}}</h1>
+<section *ngIf="!selectedPokemon" >
+  <table class="table" style="text-align: center;">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Detalles</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let pokemon of pokemons">
+        <td>{{pokemon.name | uppercase}}</td>
+        <td><button class="btn btn-primary" (click)="showPokemon(pokemon.url)">Detalle</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="col col-3"></div>
+    <button class="btn btn-secondary col col-2" (click)="getPrev()">&lt; Anterior</button>
+    <div class="col col-2"></div>
+    <button class="btn btn-secondary col col-2" (click)="getNext()">Siguiente &gt;</button>
+    <div class="col col-3"></div>
+  </div>
+</section>
+
+<section class="row justify-content-center" *ngIf="selectedPokemon!=null">
+  <p class="h2 col-12">Nombre: {{ selectedPokemon.name | uppercase}}</p>
+  <p class="h4 col-12">Tipo 1: {{selectedPokemon.types[0].type.name}}</p>
+  <p class="h4 col-12" *ngIf="selectedPokemon.types[1]!=undefined">Tipo 2: {{selectedPokemon.types[1].type.name}}</p>
+
+  <div class="row">
+    <div class="col col-4"></div>
+    <img class="img-fluid col-4 offset" [src]="selectedPokemon.sprites.other['official-artwork'].front_default" alt="">
+    <div class="col col-4"></div>
+
+  </div>
+  <div class="row">
+    <div class="col col-5"></div>
+    <button class="btn btn-secondary col col-2" (click)="unselectPokemon()">Volver</button>
+    <div class="col col-5"></div>
+  </div>
+
+</section>
